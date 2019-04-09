@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Emp implements Serializable {
 
     private Integer empno;//员工编号
-    private String ename;//员工姓名
+    private String ename;//
     private String job;//职位
     private String dept;//部门
 
