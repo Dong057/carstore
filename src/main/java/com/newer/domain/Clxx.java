@@ -2,11 +2,11 @@ package com.newer.domain;
 
 import java.io.Serializable;
 
-public class clxx implements Serializable {
+public class Clxx implements Serializable {
 
-    private Integer clid;
-    private String clxh;
-    private String pp;
+    private Integer clid;//车辆ID
+    private String clxh;//车辆型号
+    private String pp;//牌照
 
     public Integer getClid() {
         return clid;
