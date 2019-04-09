@@ -6,7 +6,7 @@ import java.sql.Date;
 public class DeliveryInformation implements Serializable {
 
     private Integer jcid;//交车ID
-    private Integer khid;//客户ID
+    private Integer khid;//客户
     private Date sj;//时间
     private Integer empno;//经手人id
     private String jqkx;//结清款项
