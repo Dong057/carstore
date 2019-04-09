@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.sql.Date;
 
 public class Potentialcustomer implements Serializable {
-    private Integer potentialcustomerid;//客户i
+    private Integer potentialcustomerid;//客户id
     private String customername;//客户姓名
     private String sex;//客户性别
     private String customerlevel;//客户等级
