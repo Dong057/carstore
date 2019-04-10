@@ -32,4 +32,9 @@ public class PotentialcustomerServiceImpl implements PotentialcustomerService{
     public Potentialcustomer findById(int potentialcustomerid) {
         return potentialcustomerMapper.findById(potentialcustomerid);
     }
+
+    @Override
+    public int deletePotentialcustomer(int potentialcustomerid) {
+        return potentialcustomerMapper.deletePotentialcustomer(potentialcustomerid);
+    }
 }
