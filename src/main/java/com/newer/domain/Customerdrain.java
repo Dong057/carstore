@@ -13,19 +13,27 @@ public class Customerdrain implements Serializable {
     private String surveytype;//调查方式
     private String surveytext;//调查内容
     private String draintext;//流失结果
-    private Integer empid;//调查员
+    private Emp emp;//调查员
 
     public Customerdrain() {
     }
 
-    public Customerdrain(Integer customerdrainid, Integer potentialcustomerid, Date surveydate, String surveytype, String surveytext, String draintext, Integer empid) {
+    public Customerdrain(Integer customerdrainid, Integer potentialcustomerid, Date surveydate, String surveytype, String surveytext, String draintext, Emp emp) {
         this.customerdrainid = customerdrainid;
         this.potentialcustomerid = potentialcustomerid;
         this.surveydate = surveydate;
         this.surveytype = surveytype;
         this.surveytext = surveytext;
         this.draintext = draintext;
-        this.empid = empid;
+        this.emp = emp;
+    }
+
+    public Emp getEmp() {
+        return emp;
+    }
+
+    public void setEmp(Emp emp) {
+        this.emp = emp;
     }
 
     public Integer getCustomerdrainid() {
@@ -76,11 +84,5 @@ public class Customerdrain implements Serializable {
         this.draintext = draintext;
     }
 
-    public Integer getEmpid() {
-        return empid;
-    }
 
-    public void setEmpid(Integer empid) {
-        this.empid = empid;
-    }
 }

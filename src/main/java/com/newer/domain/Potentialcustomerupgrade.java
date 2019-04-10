@@ -5,11 +5,11 @@ import java.sql.Date;
 
 public class Potentialcustomerupgrade implements Serializable {
     private Integer potentialcustomerupgradeid;//升级id
-    private Integer potentialcustomerid;//客户id
+    private Potentialcustomer potentialcustomer;//客户id
     private Date upgradedate;//升级日期
     private String upgradedlevel;//升级前等级
     private String upgradelevel;//升级后等级
-    private Integer empid;//操作员
+    private Emp emp;//操作员
     private String text;//备注
 
     public Integer getPotentialcustomerupgradeid() {
@@ -20,12 +20,20 @@ public class Potentialcustomerupgrade implements Serializable {
         this.potentialcustomerupgradeid = potentialcustomerupgradeid;
     }
 
-    public Integer getPotentialcustomerid() {
-        return potentialcustomerid;
+    public Potentialcustomer getPotentialcustomer() {
+        return potentialcustomer;
     }
 
-    public void setPotentialcustomerid(Integer potentialcustomerid) {
-        this.potentialcustomerid = potentialcustomerid;
+    public void setPotentialcustomer(Potentialcustomer potentialcustomer) {
+        this.potentialcustomer = potentialcustomer;
+    }
+
+    public Emp getEmp() {
+        return emp;
+    }
+
+    public void setEmp(Emp emp) {
+        this.emp = emp;
     }
 
     public Date getUpgradedate() {
@@ -52,13 +60,7 @@ public class Potentialcustomerupgrade implements Serializable {
         this.upgradelevel = upgradelevel;
     }
 
-    public Integer getEmpid() {
-        return empid;
-    }
 
-    public void setEmpid(Integer empid) {
-        this.empid = empid;
-    }
 
     public String getText() {
         return text;
@@ -68,14 +70,13 @@ public class Potentialcustomerupgrade implements Serializable {
         this.text = text;
     }
 
-    public Potentialcustomerupgrade(Integer potentialcustomerupgradeid, Integer potentialcustomerid, Date upgradedate, String upgradedlevel, String upgradelevel, Integer empid, String text) {
-
+    public Potentialcustomerupgrade(Integer potentialcustomerupgradeid, Potentialcustomer potentialcustomer, Date upgradedate, String upgradedlevel, String upgradelevel, Emp emp, String text) {
         this.potentialcustomerupgradeid = potentialcustomerupgradeid;
-        this.potentialcustomerid = potentialcustomerid;
+        this.potentialcustomer = potentialcustomer;
         this.upgradedate = upgradedate;
         this.upgradedlevel = upgradedlevel;
         this.upgradelevel = upgradelevel;
-        this.empid = empid;
+        this.emp = emp;
         this.text = text;
     }
 

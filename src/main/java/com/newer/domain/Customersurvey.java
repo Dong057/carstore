@@ -5,13 +5,13 @@ import java.sql.Date;
 
 public class Customersurvey implements Serializable {
     private Integer surveyid;//跟进id
-    private Integer potentialcustomerid;//客户id
+    private Potentialcustomer potentialcustomer;//客户id
     private Date surveydate;//跟进日期
     private String surveytype;//跟进类型
     private String surveystate;//跟进状态
     private String surveytext;//跟进内容
     private String surveyresults;//跟进结果
-    private Integer empid;//跟进员
+    private Emp emp;//跟进员
 
     public Integer getSurveyid() {
         return surveyid;
@@ -21,12 +21,20 @@ public class Customersurvey implements Serializable {
         this.surveyid = surveyid;
     }
 
-    public Integer getPotentialcustomerid() {
-        return potentialcustomerid;
+    public Emp getEmp() {
+        return emp;
     }
 
-    public void setPotentialcustomerid(Integer potentialcustomerid) {
-        this.potentialcustomerid = potentialcustomerid;
+    public void setEmp(Emp emp) {
+        this.emp = emp;
+    }
+
+    public Potentialcustomer getPotentialcustomer() {
+        return potentialcustomer;
+    }
+
+    public void setPotentialcustomer(Potentialcustomer potentialcustomer) {
+        this.potentialcustomer = potentialcustomer;
     }
 
     public Date getSurveydate() {
@@ -69,24 +77,16 @@ public class Customersurvey implements Serializable {
         this.surveyresults = surveyresults;
     }
 
-    public Integer getEmpid() {
-        return empid;
-    }
 
-    public void setEmpid(Integer empid) {
-        this.empid = empid;
-    }
-
-    public Customersurvey(Integer surveyid, Integer potentialcustomerid, Date surveydate, String surveytype, String surveystate, String surveytext, String surveyresults, Integer empid) {
-
+    public Customersurvey(Integer surveyid, Potentialcustomer potentialcustomer, Date surveydate, String surveytype, String surveystate, String surveytext, String surveyresults, Emp emp) {
         this.surveyid = surveyid;
-        this.potentialcustomerid = potentialcustomerid;
+        this.potentialcustomer = potentialcustomer;
         this.surveydate = surveydate;
         this.surveytype = surveytype;
         this.surveystate = surveystate;
         this.surveytext = surveytext;
         this.surveyresults = surveyresults;
-        this.empid = empid;
+        this.emp = emp;
     }
 
     public Customersurvey() {

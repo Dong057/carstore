@@ -32,12 +32,12 @@ public class Potentialcustomer implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     private Date registerdate;//登记日期
     private String text;//备注
-    private Integer empid;//销售顾问
+    private Emp emp;//销售顾问
 
     public Potentialcustomer() {
     }
 
-    public Potentialcustomer(Integer potentialcustomerid, String customername, String sex, String customerlevel, String comeshopcause, String carpurpose, Integer carbudget, String buycarmodel, String color, Integer carprice, String carpurchasetext, String paymentformula, Date birthdate, String marriage, String cardid, String drivertype, String profession, String workunit, String phone, String telephone, String site, String postcode, Date registerdate, String text, Integer empid) {
+    public Potentialcustomer(Integer potentialcustomerid, String customername, String sex, String customerlevel, String comeshopcause, String carpurpose, Integer carbudget, String buycarmodel, String color, Integer carprice, String carpurchasetext, String paymentformula, Date birthdate, String marriage, String cardid, String drivertype, String profession, String workunit, String phone, String telephone, String site, String postcode, Date registerdate, String text, Emp emp) {
         this.potentialcustomerid = potentialcustomerid;
         this.customername = customername;
         this.sex = sex;
@@ -62,7 +62,7 @@ public class Potentialcustomer implements Serializable {
         this.postcode = postcode;
         this.registerdate = registerdate;
         this.text = text;
-        this.empid = empid;
+        this.emp = emp;
     }
 
     public Integer getPotentialcustomerid() {
@@ -257,11 +257,11 @@ public class Potentialcustomer implements Serializable {
         this.text = text;
     }
 
-    public Integer getEmpid() {
-        return empid;
+    public Emp getEmp() {
+        return emp;
     }
 
-    public void setEmpid(Integer empid) {
-        this.empid = empid;
+    public void setEmp(Emp emp) {
+        this.emp = emp;
     }
 }
