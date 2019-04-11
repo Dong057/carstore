@@ -1,7 +1,10 @@
 package com.newer.controller;
 
+import com.newer.domain.Customersurvey;
 import com.newer.domain.Emp;
 import com.newer.domain.Potentialcustomer;
+import com.newer.domain.Potentialcustomerupgrade;
+import com.newer.service.CustomersurveyService;
 import com.newer.service.PotentialcustomerService;
 import com.newer.service.PotentialcustomerupgradeService;
 import org.apache.ibatis.annotations.Delete;
@@ -20,6 +23,10 @@ import java.util.Map;
 public class PotentialcustomerController {
     @Autowired
     private PotentialcustomerService potentialcustomerService;
+    @Autowired
+    private CustomersurveyService customersurveyService;
+    @Autowired
+    private PotentialcustomerupgradeService potentialcustomerupgradeService;
 
 
     @RequestMapping("/findAll")
@@ -162,4 +169,48 @@ public class PotentialcustomerController {
         return msg;
     }
 
+    @PostMapping("/addCustomersurvey")
+    public Map<String,Object> addCustomersurvey(
+            @RequestParam("potentialcustomerid")int potentialcustomerid
+            ,@RequestParam("surveytype")String surveytype
+            ,@RequestParam("surveystate")String surveystate
+            ,@RequestParam("surveytext")String surveytext
+            ,@RequestParam("surveyresults")String surveyresults
+            ,@RequestParam("empid")int empid
+    ){
+        Map<String, Object> msg = new HashMap<>();
+        Customersurvey customersurvey=new Customersurvey();
+        customersurvey.setSurveytype(surveytype);
+        customersurvey.setSurveystate(surveystate);
+        customersurvey.setSurveytext(surveytext);
+        customersurvey.setSurveyresults(surveyresults);
+        if(customersurveyService.addCustomersurvey(potentialcustomerid,customersurvey,empid)==1){
+            msg.put("msg", "跟进成功");
+            return msg;
+        }
+        msg.put("msg", "跟进失败");
+        return msg;
+    }
+
+    @PostMapping("/levelUpdateAndAdd")
+    public Map<String,Object> levelUpdateAndAdd(
+            @RequestParam("potentialcustomerid")int potentialcustomerid
+            ,@RequestParam("upgradedlevel")String upgradedlevel
+            ,@RequestParam("upgradelevel")String upgradelevel
+            ,@RequestParam("empid")int empid
+            ,@RequestParam("text")String text
+    ){
+        Map<String, Object> msg = new HashMap<>();
+        Potentialcustomerupgrade potentialcustomerupgrade=new Potentialcustomerupgrade();
+        potentialcustomerupgrade.setUpgradedlevel(upgradedlevel);
+        potentialcustomerupgrade.setUpgradelevel(upgradelevel);
+        potentialcustomerupgrade.setText(text);
+        System.out.println(potentialcustomerupgrade.toString());
+        if(potentialcustomerupgradeService.levelUpdateAndAdd(potentialcustomerid,upgradelevel,potentialcustomerupgrade,empid)==1){
+            msg.put("msg", "流失成功");
+            return msg;
+        }
+        msg.put("msg", "流失失败");
+        return msg;
+    }
 }

@@ -12,6 +12,19 @@ public class Potentialcustomerupgrade implements Serializable {
     private Emp emp;//操作员
     private String text;//备注
 
+    @Override
+    public String toString() {
+        return "Potentialcustomerupgrade{" +
+                "potentialcustomerupgradeid=" + potentialcustomerupgradeid +
+                ", potentialcustomer=" + potentialcustomer +
+                ", upgradedate=" + upgradedate +
+                ", upgradedlevel='" + upgradedlevel + '\'' +
+                ", upgradelevel='" + upgradelevel + '\'' +
+                ", emp=" + emp +
+                ", text='" + text + '\'' +
+                '}';
+    }
+
     public Integer getPotentialcustomerupgradeid() {
         return potentialcustomerupgradeid;
     }

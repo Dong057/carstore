@@ -8,12 +8,13 @@ import org.apache.ibatis.annotations.Update;
 public interface PotentialcustomerupgradeMapper {
     @Update("update potentialcustomer set customerlevel=#{customerlevel} where potentialcustomerid=#{potentialcustomerid} ")
     int updateLevel(@Param("potentialcustomerid")int potentialcustomerid,@Param("customerlevel")String customerlevel);
-    @Insert("insert into potentialcustomer values(null" +
-            ",#{Potentialcustomerupgrade.Potentialcustomerupgradeid}" +
+
+    @Insert("insert into potentialcustomerupgrade values(null" +
+            ",#{potentialcustomerid}" +
             ",now()" +
-            ",#{Potentialcustomerupgrade.upgradedlevel}" +
-            ",#{Potentialcustomerupgrade.upgradelevel}" +
+            ",#{potentialcustomerupgrade.upgradedlevel}" +
+            ",#{potentialcustomerupgrade.upgradelevel}" +
             ",#{empid}" +
-            ",#{Potentialcustomerupgrade.text})")
-    int addPotentialcustomerupgrade(@Param("potentialcustomerupgrade") Potentialcustomerupgrade potentialcustomerupgrade, @Param("empid")int empid);
+            ",#{potentialcustomerupgrade.text})")
+    int addPotentialcustomerupgrade(@Param("potentialcustomerid")int potentialcustomerid,@Param("potentialcustomerupgrade") Potentialcustomerupgrade potentialcustomerupgrade, @Param("empid")int empid);
 }
