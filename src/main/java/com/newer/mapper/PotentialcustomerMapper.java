@@ -39,4 +39,63 @@ public interface PotentialcustomerMapper {
 
     @Delete("delete from potentialcustomer where potentialcustomerid=#{potentialcustomerid}")
     int deletePotentialcustomer(@Param("potentialcustomerid")int potentialcustomerid);
+
+
+    @Insert("insert into potentialcustomer values(null" +
+            ",#{potentialcustomer.customername}" +
+            ",#{potentialcustomer.sex}" +
+            ",1" +
+            ",#{potentialcustomer.comeshopcause}" +
+            ",#{potentialcustomer.carpurpose}" +
+            ",#{potentialcustomer.carbudget}" +
+            ", #{potentialcustomer.buycarmodel}" +
+            ", #{potentialcustomer.color}" +
+            ", #{potentialcustomer.carprice}" +
+            ", #{potentialcustomer.carpurchasetext}" +
+            ", #{potentialcustomer.paymentformula}" +
+            ", #{potentialcustomer.birthdate}" +
+            ", #{potentialcustomer.marriage}" +
+            ", #{potentialcustomer.cardid}" +
+            ", #{potentialcustomer.drivertype}" +
+            ", #{potentialcustomer.profession}" +
+            ", #{potentialcustomer.workunit}" +
+            ", #{potentialcustomer.phone}" +
+            ", #{potentialcustomer.telephone}" +
+            ", #{potentialcustomer.site}" +
+            ", #{potentialcustomer.postcode}" +
+            ", now()" +
+            ", #{potentialcustomer.text}" +
+            ", #{empid})")
+    int addPotentialcustomer(@Param("potentialcustomer")Potentialcustomer potentialcustomer
+            ,@Param("empid")int empid);
+
+
+    @Update("update potentialcustomer set customername=#{potentialcustomer.customername}" +
+            " ,sex=#{potentialcustomer.sex}" +
+            ",comeshopcause=#{potentialcustomer.comeshopcause}" +
+            ",carpurpose=#{potentialcustomer.carpurpose}" +
+            ",carbudget=#{potentialcustomer.carbudget}" +
+            ",buycarmodel=#{potentialcustomer.buycarmodel}" +
+            ", color=#{potentialcustomer.color}" +
+            ", carprice=#{potentialcustomer.carprice}" +
+            ", carpurchasetext=#{potentialcustomer.carpurchasetext}" +
+            ", paymentformula=#{potentialcustomer.paymentformula}" +
+            ", birthdate=#{potentialcustomer.birthdate}" +
+            ", marriage=#{potentialcustomer.marriage}" +
+            ", cardid=#{potentialcustomer.cardid}" +
+            ",drivertype=#{potentialcustomer.drivertype}" +
+            ", profession=#{potentialcustomer.profession}" +
+            ", workunit=#{potentialcustomer.workunit}" +
+            ", phone=#{potentialcustomer.phone}" +
+            ", telephone=#{potentialcustomer.telephone}" +
+            ", site=#{potentialcustomer.site}" +
+            ", postcode=#{potentialcustomer.postcode}" +
+            ",registerdate=#{potentialcustomer.registerdate}" +
+            ", text=#{potentialcustomer.text}" +
+            ", empid=#{empid}" +
+            " where potentialcustomerid=#{potentialcustomer.potentialcustomerid};"
+           )
+    int updatePotentialcustomer(@Param("potentialcustomer")Potentialcustomer potentialcustomer
+            ,@Param("empid")int empid);
+
 }

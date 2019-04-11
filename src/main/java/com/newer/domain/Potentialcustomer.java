@@ -34,6 +34,37 @@ public class Potentialcustomer implements Serializable {
     private String text;//备注
     private Emp emp;//销售顾问
 
+    @Override
+    public String toString() {
+        return "Potentialcustomer{" +
+                "potentialcustomerid=" + potentialcustomerid +
+                ", customername='" + customername + '\'' +
+                ", sex='" + sex + '\'' +
+                ", customerlevel='" + customerlevel + '\'' +
+                ", comeshopcause='" + comeshopcause + '\'' +
+                ", carpurpose='" + carpurpose + '\'' +
+                ", carbudget=" + carbudget +
+                ", buycarmodel='" + buycarmodel + '\'' +
+                ", color='" + color + '\'' +
+                ", carprice=" + carprice +
+                ", carpurchasetext='" + carpurchasetext + '\'' +
+                ", paymentformula='" + paymentformula + '\'' +
+                ", birthdate=" + birthdate +
+                ", marriage='" + marriage + '\'' +
+                ", cardid='" + cardid + '\'' +
+                ", drivertype='" + drivertype + '\'' +
+                ", profession='" + profession + '\'' +
+                ", workunit='" + workunit + '\'' +
+                ", phone='" + phone + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", site='" + site + '\'' +
+                ", postcode='" + postcode + '\'' +
+                ", registerdate=" + registerdate +
+                ", text='" + text + '\'' +
+                ", emp=" + emp +
+                '}';
+    }
+
     public Potentialcustomer() {
     }
 
