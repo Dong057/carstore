@@ -1,5 +1,6 @@
 package com.newer.service;
 
+import com.newer.domain.Emp;
 import com.newer.domain.Potentialcustomer;
 import com.newer.domain.Potentialcustomerupgrade;
 import com.newer.mapper.EmpMapper;
@@ -52,5 +53,8 @@ public class PotentialcustomerServiceImpl implements PotentialcustomerService{
         return potentialcustomerMapper.updatePotentialcustomer(potentialcustomer,empid);
     }
 
-
+    @Override
+    public List<Emp> findEmpInfo() {
+        return potentialcustomerMapper.findEmpInfo();
+    }
 }

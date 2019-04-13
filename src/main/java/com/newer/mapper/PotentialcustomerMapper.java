@@ -1,5 +1,6 @@
 package com.newer.mapper;
 
+import com.newer.domain.Emp;
 import com.newer.domain.Potentialcustomer;
 import org.apache.ibatis.annotations.*;
 
@@ -98,4 +99,6 @@ public interface PotentialcustomerMapper {
     int updatePotentialcustomer(@Param("potentialcustomer")Potentialcustomer potentialcustomer
             ,@Param("empid")int empid);
 
+    @Select("select * from emp")
+    List<Emp> findEmpInfo();
 }

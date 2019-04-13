@@ -110,56 +110,60 @@ public class PotentialcustomerController {
         return msg;
     }
 
-    @PostMapping("/updatePotentialcustomer")
+//    @RequestParam("potentialcustomerid")int potentialcustomerid
+//            ,@RequestParam("customername")String customername
+//            , @RequestParam(value = "sex",required = false)String sex
+//            , @RequestParam(value = "comeshopcause",required = false)String comeshopcause
+//            , @RequestParam(value = "carpurpose",required = false)String carpurpose
+//            , @RequestParam(value = "carbudget",required = false)Integer carbudget
+//            , @RequestParam(value = "buycarmodel",required = false)String buycarmodel
+//            , @RequestParam(value = "color",required = false)String color
+//            , @RequestParam(value = "carprice",required = false)Integer carprice
+//            , @RequestParam(value = "carpurchasetext",required = false)String carpurchasetext
+//            , @RequestParam(value = "paymentformula",required = false)String paymentformula
+//            , @RequestParam(value = "birthdate",required = false)Date birthdate
+//            , @RequestParam(value = "marriage",required = false)String marriage
+//            , @RequestParam(value = "cardid",required = false)String cardid
+//            , @RequestParam(value = "drivertype")String drivertype
+//            , @RequestParam(value = "profession",required = false)String profession
+//            , @RequestParam(value = "workunit",required = false)String workunit
+//            , @RequestParam(value = "phone")String phone
+//            , @RequestParam(value = "telephone",required = false)String telephone
+//            , @RequestParam(value = "site",required = false)String site
+//            , @RequestParam(value = "postcode",required = false)String postcode
+//            ,@RequestParam(value = "registerdate")Date registerdate
+//            , @RequestParam(value = "text",required = false)String text,
+
+    @PutMapping("/updatePotentialcustomer/{empid}")
     public Map<String,Object> updatePotentialcustomer(
-            @RequestParam("potentialcustomerid")int potentialcustomerid
-            ,@RequestParam("customername")String customername
-            , @RequestParam(value = "sex",required = false)String sex
-            , @RequestParam(value = "comeshopcause",required = false)String comeshopcause
-            , @RequestParam(value = "carpurpose",required = false)String carpurpose
-            , @RequestParam(value = "carbudget",required = false)Integer carbudget
-            , @RequestParam(value = "buycarmodel",required = false)String buycarmodel
-            , @RequestParam(value = "color",required = false)String color
-            , @RequestParam(value = "carprice",required = false)Integer carprice
-            , @RequestParam(value = "carpurchasetext",required = false)String carpurchasetext
-            , @RequestParam(value = "paymentformula",required = false)String paymentformula
-            , @RequestParam(value = "birthdate",required = false)Date birthdate
-            , @RequestParam(value = "marriage",required = false)String marriage
-            , @RequestParam(value = "cardid",required = false)String cardid
-            , @RequestParam(value = "drivertype")String drivertype
-            , @RequestParam(value = "profession",required = false)String profession
-            , @RequestParam(value = "workunit",required = false)String workunit
-            , @RequestParam(value = "phone")String phone
-            , @RequestParam(value = "telephone",required = false)String telephone
-            , @RequestParam(value = "site",required = false)String site
-            , @RequestParam(value = "postcode",required = false)String postcode
-            , @RequestParam(value = "text",required = false)String text
-            , @RequestParam(value = "empid") int empid
+            @RequestBody Potentialcustomer potentialcustomer,
+            @PathVariable(value = "empid") int empid
     ) {
         Map<String, Object> msg = new HashMap<>();
-        Potentialcustomer potentialcustomer = new Potentialcustomer();
-        potentialcustomer.setPotentialcustomerid(potentialcustomerid);
-        potentialcustomer.setCustomername(customername);
-        potentialcustomer.setSex(sex);
-        potentialcustomer.setComeshopcause(comeshopcause);
-        potentialcustomer.setCarpurpose(carpurpose);
-        potentialcustomer.setCarbudget(carbudget);
-        potentialcustomer.setBuycarmodel(buycarmodel);
-        potentialcustomer.setColor(color);
-        potentialcustomer.setCarprice(carprice);
-        potentialcustomer.setCarpurchasetext(carpurchasetext);
-        potentialcustomer.setPaymentformula(paymentformula);
-        potentialcustomer.setBirthdate(birthdate);
-        potentialcustomer.setMarriage(marriage);
-        potentialcustomer.setCardid(cardid);
-        potentialcustomer.setDrivertype(drivertype);
-        potentialcustomer.setProfession(profession);
-        potentialcustomer.setWorkunit(workunit);
-        potentialcustomer.setPhone(phone);
-        potentialcustomer.setTelephone(telephone);
-        potentialcustomer.setSite(site);
-        potentialcustomer.setPostcode(postcode);
-        potentialcustomer.setText(text);
+//        Potentialcustomer potentialcustomer = new Potentialcustomer();
+//        potentialcustomer.setPotentialcustomerid(potentialcustomerid);
+//        potentialcustomer.setCustomername(customername);
+//        potentialcustomer.setSex(sex);
+//        potentialcustomer.setComeshopcause(comeshopcause);
+//        potentialcustomer.setCarpurpose(carpurpose);
+//        potentialcustomer.setCarbudget(carbudget);
+//        potentialcustomer.setBuycarmodel(buycarmodel);
+//        potentialcustomer.setColor(color);
+//        potentialcustomer.setCarprice(carprice);
+//        potentialcustomer.setCarpurchasetext(carpurchasetext);
+//        potentialcustomer.setPaymentformula(paymentformula);
+//        potentialcustomer.setBirthdate(birthdate);
+//        potentialcustomer.setMarriage(marriage);
+//        potentialcustomer.setCardid(cardid);
+//        potentialcustomer.setDrivertype(drivertype);
+//        potentialcustomer.setProfession(profession);
+//        potentialcustomer.setWorkunit(workunit);
+//        potentialcustomer.setPhone(phone);
+//        potentialcustomer.setTelephone(telephone);
+//        potentialcustomer.setSite(site);
+//        potentialcustomer.setPostcode(postcode);
+//        potentialcustomer.setRegisterdate(registerdate);
+//        potentialcustomer.setText(text);
         System.out.println(potentialcustomer.toString());
         if (potentialcustomerService.updatePotentialcustomer(potentialcustomer, empid) == 1) {
             msg.put("msg", "修改成功");
@@ -212,5 +216,11 @@ public class PotentialcustomerController {
         }
         msg.put("msg", "流失失败");
         return msg;
+    }
+
+    @GetMapping("/findEmpInfo")
+    public List<Emp> findEmpInfo(){
+        List<Emp> emps=potentialcustomerService.findEmpInfo();
+        return emps;
     }
 }

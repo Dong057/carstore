@@ -1,5 +1,6 @@
 package com.newer.service;
 
+import com.newer.domain.Emp;
 import com.newer.domain.Potentialcustomer;
 import com.newer.domain.Potentialcustomerupgrade;
 import org.apache.ibatis.annotations.Param;
@@ -15,5 +16,5 @@ public interface PotentialcustomerService {
             ,@Param("empid")int empid);
     int updatePotentialcustomer(@Param("potentialcustomer")Potentialcustomer potentialcustomer
             ,@Param("empid")int empid);
-
+    List<Emp> findEmpInfo();
 }
